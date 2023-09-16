@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+
+html,
+body {
+    background-color: #242A32;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.heading {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    padding: 20px;
+    color: transparent;
+    -webkit-text-stroke: 2px #0296e5;
+    -webkit-text-fill-color: #242a32;
+    cursor: pointer;
+}
+
+.api {
+    height: 50px;
+    width: 90vw;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    overflow: hidden;
+    background-color: #3A3F47;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.api input {
+    height: 100%;
+    width: 95%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #a0a1a5;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.title {
+    height: 50px;
+    width: 90vw;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    overflow: hidden;
+    background: #3A3F47;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.title input {
+    height: 100%;
+    width: 95%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #a0a1a5;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.title button {
+    height: 100%;
+    width: 2%;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 50px;
+}
+
+.card {
+    width: 260px;
+    height: 380px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    scale: 1.2;
+}
+
+.card img {
+    width: 200px;
+    height: 300px;
+    border-radius: 16px;
+    position: absolute;
+    right: 0px;
+}
+
+.card h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+
+.card p {
+    font-size: 120px;
+    font-weight: 600;
+    font-family: "Arial", sans-serif;
+    -webkit-text-stroke: 2px #0296e5;
+    -webkit-text-fill-color: #242a32;
+    position: absolute;
+    bottom: 30px;
+    left: 35px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 50px;
+    margin-inline: auto;
+    width: 90vw;
+    height: 200px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 10%;
+    border: 4px solid rgb(0, 0, 0);
+    animation: spin 1s ease-in infinite;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .heading {
+        font-size: 30px;
+        font-weight: 400;
+        padding: 20px;
+    }
+
+    #main {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 480px) {
+    #main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #main {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .api {
+        height: 120px;
+        padding-inline: 20px;
+        border-radius: 16px;
+        margin-bottom: 50px;
+    }
+
+    .api input {
+        font-size: 50px;
+        font-weight: 800;
+    }
+
+    .title {
+        height: 120px;
+        padding-inline: 20px;
+        border-radius: 16px;
+        margin-bottom: 50px;
+    }
+
+    .title input {
+        font-size: 50px;
+        font-weight: 800;
+    }
+
+    .title button {
+        height: 100%;
+        width: 2%;
+        overflow: hidden;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 14vw;
+  height: 30vh;
+  color: #fff;
+}
+  .loader:before,
+  .loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+  }
+  .loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+  }
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
